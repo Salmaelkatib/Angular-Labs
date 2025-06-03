@@ -1,8 +1,8 @@
 # AngularDay2
 
-![Screenshot1](assets/Screenshot_1.png)
+![Screenshot1](src/assets/images/Screenshot_1.png)
 
-![Screenshot1](assets/Screenshot_2.png)
+![Screenshot1](src/assets/images/Screenshot_2.png)
 
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.0.
