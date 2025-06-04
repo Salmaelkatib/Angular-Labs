@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-products',
@@ -8,7 +9,7 @@ import { ProductService } from '../../services/product.service';
   styleUrl: './products.component.css'
 })
 export class ProductsComponent implements OnInit {
-    
+   
   products: any[] = [];
   categories: any[] = [];
   selectedCategory: string = '';
@@ -17,7 +18,7 @@ export class ProductsComponent implements OnInit {
   loading: boolean = true;
 
 
-  constructor(private _productService:ProductService){}
+  constructor(private _productService:ProductService , private _cartService:CartService){}
   ngOnInit(): void {
     this._productService.getProducts().subscribe(data => {
       console.log("Products data:", data);
@@ -36,7 +37,10 @@ export class ProductsComponent implements OnInit {
     this.titleSearch = '';
     this.maxPrice = 0;
   }
-
+  addToCart(product: any) {
+    this._cartService.addToCart(product);
+    console.log("Product added to cart:", product);
+  }
 
 
 }

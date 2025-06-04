@@ -9,7 +9,10 @@ import { ProductService } from './services/product.service';
 import { CommonModule } from '@angular/common';
 import { ProductFilterPipe } from './pipes/product-filter-pipe';
 import { ProductsComponent } from './components/products/products.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { CartComponent } from './components/cart/cart.component';
+import { AppRoutingModule } from './app-routing/app-routing-module';
 
 @NgModule({
   declarations: [
@@ -18,11 +21,15 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     ProductFilterPipe,
     ProductsComponent,
+    ProductDetailsComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
+    ReactiveFormsModule
 ],
   providers: [
     provideBrowserGlobalErrorListeners(),

@@ -51,7 +51,11 @@
                 ${{ product.price }}<br>
                 {{ product.description | slice:0:60 }}...
               </p>
-              <button class="btn btn-sm btn-primary">Add to Cart</button>
+                 <div class="d-flex justify-content-between mt-3">
+                    <a [routerLink]="['/products', product.id]" class="btn btn-outline-primary btn-sm">View Details</a>
+                    <button class="btn btn-primary btn-sm" (click)="addToCart(product)">Add to Cart</button>
+                 </div>
+          
             </div>
           </div>
         </div>
